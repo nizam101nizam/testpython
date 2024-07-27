@@ -20,13 +20,15 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name: Read ./sample1.json
-      id: input_file
+    - name: Read input
+      id: tsfile
       uses: ./
       with:
-         path: sample1.json
-    - name: Echo (content) src/index.ts
-      run: echo "${{ steps.input_file.outputs.content }}"
+           path: sample1.json
+
+    - name: Echo (content)
+      run: echo "${{ steps.tsfile.outputs.content }}"
+
     - name: Test with pytest
       run: |
         python ./python_script.py
