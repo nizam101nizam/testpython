@@ -20,8 +20,10 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    - name : set env variable
-      run: echo "input_data=$(cat ./sample1.json)" >> $GITHUB_ENV
+    - name: Read ./sample1.json
+      id: input_file
+    - name: Echo (content) src/index.ts
+      run: echo "${{ steps.input_file.outputs.content }}"
     - name: Test with pytest
       run: |
         python ./python_script.py
