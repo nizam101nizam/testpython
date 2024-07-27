@@ -19,7 +19,6 @@ jobs:
         id: package
         uses: nizam101nizam/testpython@main
         with:
-          path: ./sample1.json
-
+           filename:  './sample1.json'
       - name: Echo package.json
         run: echo '${{ steps.package.outputs.content }}'
