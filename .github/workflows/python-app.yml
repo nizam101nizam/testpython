@@ -16,12 +16,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Read sample1.json
-        id: package
-        uses: nizam101nizam/testpython@main
-        #uses: ./
-        with:
-          path: sample1.json
-
-      - name: Echo package.json
-        run: echo '${{ steps.package.outputs.content }}'
+      - name: read input
+        run: |
+          echo "PACKAGE_JSON=$(cat ./sample1.json)" >> $GITHUB_ENV
+         
