@@ -10,15 +10,17 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Read package.json
-      id: package
-      uses: nizam101nizam/testpython@main
-      with:
-        path: ./sample1.json
-    - name: Echo package.json
-      run: echo "${{ steps.package.outputs.content }}"
+      - uses: actions/checkout@v4
+
+      - name: Read sample1.json
+        id: package
+        # uses: jaywcjlove/github-action-read-file@main
+        uses: ./
+        with:
+          path: sample1.json
+
+      - name: Echo package.json
+        run: echo '${{ steps.package.outputs.content }}'
