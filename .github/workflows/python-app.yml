@@ -22,7 +22,7 @@ jobs:
         python-version: "3.10"
     - name: Read input
       id: tsfile
-      uses: ./
+    - uses: ./
       with:
            path: sample1.json
 
