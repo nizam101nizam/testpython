@@ -28,9 +28,6 @@ jobs:
     - name: Get version
       id: vars
       run: echo "version=$(cat ./sample1.json)" >> $GITHUB_OUTPUT
-    - name: Test output
-      run: echo ${{ steps.vars.outputs.version }}
-
     - name: Test with pytest
       run: |
         python ./python_script.py
