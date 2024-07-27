@@ -12,11 +12,11 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: read input
-        run: |
-          echo "PACKAGE_JSON=$(cat ./sample1.json)" >> $GITHUB_ENV
+    - id: set-matrix
+      run: |
+        JSON=$(cat ./sample1.json)
+        echo "::set-output name=matrix::${JSON//'%'/'%25'}"
          
