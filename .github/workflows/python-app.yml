@@ -6,7 +6,7 @@ name: Python application
 on:
  workflow_dispatch:
 env:
-        input_data: ${{ $( cat ./sample1.json) }}
+        input_data: cat ./sample1.json
 
 permissions:
   contents: read
