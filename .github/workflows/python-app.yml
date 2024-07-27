@@ -6,7 +6,7 @@ name: Python application
 on:
  workflow_dispatch:
 env:
-        input_data: Testing the data sample
+        input_data: ${{ $( cat ./sample1.json) }}
 
 permissions:
   contents: read
