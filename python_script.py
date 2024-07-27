@@ -2,7 +2,7 @@ import os
 data = os.getenv("input_data")
 print(data)
 print("Hello welocme to Python Git hub")
-record = os.getenv("GITHUB_ENV")
+record = os.getenv("GITHUB_PATH")
 print(record)
 home = os.getenv("HOME")
 pwd= os.getcwd()
