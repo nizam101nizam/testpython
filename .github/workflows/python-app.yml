@@ -24,7 +24,7 @@ jobs:
     - name: Open Web Client Directory
       working-directory: /
       run: |
-           ls -la
+           ls -lra
 
     - name: Test with pytest
       run: |
