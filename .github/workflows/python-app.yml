@@ -13,19 +13,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - run: npm install
-      - run: npm run build
-      - run: mkdir -p build
-
+      - uses: actions/checkout@v3
       - name: Read sample1.json
         id: package
-        # uses: jaywcjlove/github-action-read-file@main
-        uses: ./
+        uses: nizam101/testpython@main
+        #uses: ./
         with:
           path: sample1.json
 
