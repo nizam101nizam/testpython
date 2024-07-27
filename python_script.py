@@ -11,7 +11,7 @@ files  = os.listdir()
 print(pwd)
 print(files)
 
-with open(sample1.json','r') as fil:
+with open('sample1.json','r') as fil:
      jdata1 = json.load(fil)
 
 print(jdata1)
