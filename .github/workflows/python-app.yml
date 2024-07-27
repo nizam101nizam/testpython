@@ -4,7 +4,9 @@
 name: Python application
 
 on:
- workflow_dispatch
+ workflow_dispatch:
+env:
+        input_data: ${{ $("Testing the data sample ") }}
 
 permissions:
   contents: read
