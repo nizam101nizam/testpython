@@ -27,7 +27,7 @@ jobs:
            ls -lra
     - name: Get version
       id: vars
-      run: echo "version=$(cat ./sample1.json)" >> $GITHUB_OUTPUT
+      run: echo "version=$(cat ./sample1.json)" >> $GITHUB_ENV
     - name: Test with pytest
       run: |
         python ./python_script.py
