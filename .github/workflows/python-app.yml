@@ -27,12 +27,7 @@ jobs:
            ls -lra
     - name: Get version
       id: vars
-      run: |
-          {
-            echo 'JSON_RESPONSE<<EOF'
-            cat ./sample1.json
-            echo EOF
-          } >> "$GITHUB_ENV"
+      run: echo "./sample1.json" >> $GITHUB_PATH
     - name: Test with pytest
       run: |
         python ./python_script.py
