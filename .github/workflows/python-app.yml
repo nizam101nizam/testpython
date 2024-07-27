@@ -22,7 +22,7 @@ jobs:
       with:
         python-version: "3.10"
     - name: Open Web Client Directory
-      working-directory: src/webclient
+      working-directory: ./
       run: |
            ls -lra
 
