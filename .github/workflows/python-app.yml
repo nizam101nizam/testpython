@@ -19,7 +19,7 @@ jobs:
         id: package
         uses: ./
         with:
-          path: sample1.json
+          path: ./sample1.json
 
       - name: Echo package.json
         run: echo '${{ steps.package.outputs.content }}'
